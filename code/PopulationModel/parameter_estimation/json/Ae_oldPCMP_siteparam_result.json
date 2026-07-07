@@ -1,0 +1,40 @@
+{
+  "point": "tokyo",
+  "species": "Aedes_albopictus",
+  "best_seed": 42,
+  "best_nll": 5169.801343697556,
+  "elapsed_sec": 157.70385265350342,
+  "parameters": {
+    "p_b1": 12.027983917622125,
+    "p_b2": 11.981400057162633,
+    "p_ccl": 2.2867191396092053,
+    "p_a1l": 2.2790577062238007,
+    "p_a2l": 3.8366461201498816,
+    "p_pf": 24.662578744716058,
+    "p_dis_l": -3.309940526799873,
+    "p_m_mult_egg": 4.9958322626455685,
+    "p_m_mult_larva": 4.514370240118216,
+    "p_m_mult_pupa": 0.11566678734953502,
+    "p_m_mult_adult": 1.4037448427755073
+  },
+  "stats": {
+    "R2_Linear": 0.09999109303365927,
+    "RMSE_Linear": 17.57961805639476,
+    "R2_Log": 0.03258291428602078,
+    "RMSE_Log": 1.376156235259952,
+    "Correlation": 0.3182104367571661
+  },
+  "de_settings": {
+    "seed": 42,
+    "maxiter": 1200,
+    "popsize": 24,
+    "tol": 0.001,
+    "strategy": "best1bin",
+    "mutation": [
+      0.5,
+      1.6
+    ],
+    "recombination": 0.7,
+    "polish": true
+  }
+}

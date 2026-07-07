@@ -1,0 +1,68 @@
+{
+  "point": "tokyo",
+  "species": "Culex_pipiens",
+  "model": "Culex adult diapause Euler with RK-style new terms",
+  "integration": "Euler",
+  "optimizer": "Differential Evolution",
+  "note": "This version intentionally keeps Euler integration. RK4 conversion is the next step.",
+  "new_terms": {
+    "dis": "dis = 10 ** p_dis_l",
+    "stage_specific_mortality_scaling": {
+      "egg": "m0_base * p_m_mult_egg",
+      "larva": "m1_base * p_m_mult_larva",
+      "pupa": "m2_base * p_m_mult_pupa",
+      "active_adult": "m3_base * p_m_mult_adult",
+      "diapause_adult": "BASE_M4_DIAPAUSE * p_m_mult_diapause"
+    },
+    "proportional_washout": "mpf = pf_scalar * (prec - pf) if prec > pf else 0, clamped to [0, 0.8]"
+  },
+  "best_nll": 3915.0408001864307,
+  "elapsed_sec": 15492.170477867126,
+  "parameters": {
+    "p_a1l": -0.1284972836023046,
+    "p_a2l": 1.9866219142869666,
+    "p_b1": 10.11633087737418,
+    "p_b2": 11.298706796798639,
+    "p_ccl": 1.3710773265591216,
+    "p_pf": 9.767814101107291,
+    "p_pf_scalar_l": 2.9206699478776423,
+    "p_dis_l": -0.379200396304602,
+    "p_m_mult_egg": 6.367139393299223,
+    "p_m_mult_larva": 2.651801898922038,
+    "p_m_mult_pupa": 0.14009418352465186,
+    "p_m_mult_adult": 1.4148685224799031,
+    "p_m_mult_diapause": 3.2331831392601704
+  },
+  "converted_parameters": {
+    "a1": 0.7438797156648782,
+    "a2": 96.96654336581459,
+    "cc": 23.50051212526584,
+    "pf_scalar": 833.0478500370763,
+    "dis": 0.41763761184600945
+  },
+  "stats": {
+    "R2_Linear": 0.24256174641007566,
+    "RMSE_Linear": 20.22974883110314,
+    "R2_Log": 0.544287088186255,
+    "RMSE_Log": 0.9153038426483195,
+    "Correlation": 0.49449057016368925
+  },
+  "settings": {
+    "START_YEAR": 2003,
+    "YEAR_LENGTH": 11,
+    "WEEK_LENGTH": 572,
+    "DAY_LENGTH": 25,
+    "DELTA_T": 0.04,
+    "DE_SEED": 42,
+    "DE_MAXITER": 1000,
+    "DE_POPSIZE": 20,
+    "DE_TOL": 0.005,
+    "DE_STRATEGY": "best1bin",
+    "DE_MUTATION": [
+      0.5,
+      1.3
+    ],
+    "DE_RECOMBINATION": 0.7,
+    "DE_POLISH": true
+  }
+}
